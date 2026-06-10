@@ -510,3 +510,76 @@ body{
     bottom: 10px;
   }
 }
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.properties-section {
+  padding: 80px 20px;
+}
+
+.property-grid {
+  grid-template-columns: 1fr;
+}
+
+.property-card {
+  width: 100%;
+}
+
+.property-card img {
+  height: 220px;
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    width: 95%;
+    padding: 14px 16px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 56px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .properties-section h2 {
+    font-size: 42px;
+  }
+
+  .chat-widget {
+    width: calc(100vw - 20px);
+    height: 75vh;
+    right: 10px;
+    left: 10px;
+    bottom: 90px;
+  }
+
+  .chat-bubble {
+    right: 20px;
+    bottom: 20px;
+  }
+}
