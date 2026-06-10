@@ -1,0 +1,37 @@
+
+Name: abid
+Phone: 0319
+Budget: 100
+Bedrooms: 4
+---------------------------
+
+Name: HAMMAD
+Phone: 0316889590
+-------------------------
+
+Intent: Buy
+Budget: 100000
+Location: NewYork
+Bedrooms: 4
+Name: Hammad
+Phone: 03211556q3q6
+Email: 3whdsmmm@fhj.com
+-------------------------
+
+Intent: Buy
+Budget: 10000
+Location: cbhvs
+Bedrooms: vnjdfj
+Name: wuvju
+Phone: njdnjf
+Email: uhvfvnh
+-------------------------
+
+Intent: Buy
+Budget: 10000
+Location: Dallas
+Bedrooms: 3
+Name: Hammad
+Phone: 94203q82593q89q523
+Email: oi8430983jdvjv
+-------------------------
