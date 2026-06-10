@@ -502,10 +502,6 @@ body{
     padding: 80px 20px;
   }
 
-  .property-grid {
-    grid-template-columns: 1fr;
-  }
-
   .chat-widget {
     width: calc(100vw - 20px);
     right: 10px;
