@@ -1,12 +1,4 @@
 function Navbar() {
-  const openChat = (e) => {
-    e.preventDefault();
-
-    document
-      .querySelector(".chat-bubble")
-      ?.click();
-  };
-
   return (
     <nav className="navbar">
       <div className="logo">
@@ -18,10 +10,7 @@ function Navbar() {
           Properties
         </a>
 
-        <a
-          href="#"
-          onClick={openChat}
-        >
+        <a href="#contact">
           Contact
         </a>
       </div>
