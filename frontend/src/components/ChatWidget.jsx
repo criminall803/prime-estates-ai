@@ -41,7 +41,7 @@ function ChatWidget() {
     try {
 
       const response = await fetch(
-        "http://prime-estates-ai.onrender.com/chat",
+        "https://prime-estates-ai.onrender.com/chat",
         {
           method: "POST",
           headers: {
