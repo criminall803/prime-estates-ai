@@ -78,19 +78,20 @@ function ChatWidget() {
 
   return (
     <>
-      <button
-        className="chat-bubble"
-        onClick={() => setOpen(!open)}
-      >
-        <BsStars size={30}/>
+  {!open && (
+  <button
+    className="chat-bubble"
+    onClick={() => setOpen(true)}
+  >
+    <BsStars size={30} />
+  </button>
+)}
 
-      </button>
+{open && (
+  <div className="chat-widget">
 
-      {open && (
-        <div className="chat-widget">
-
-          <div className="chat-header">
-  <span>Prime Estates AI Assistant</span>
+    <div className="chat-header">
+      <span>Prime Estates AI Assistant</span>
 
   <button
     className="close-btn"
