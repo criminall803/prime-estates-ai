@@ -8,6 +8,9 @@ function ChatWidget({
   propertyPrompt
 }) {
   const [message, setMessage] = useState("");
+  useEffect(() => {
+  fetch("https://prime-estates-ai.onrender.com");
+}, []);
 
   const [messages, setMessages] = useState([
     {
