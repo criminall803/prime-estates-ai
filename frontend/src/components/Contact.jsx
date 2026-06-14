@@ -1,6 +1,9 @@
 function Contact() {
   return (
-    <section id="contact" className="contact-section">
+    <section
+      id="contact"
+      className="contact-section"
+    >
       <h2>Contact Us</h2>
 
       <p>
@@ -19,8 +22,8 @@ function Contact() {
         />
 
         <textarea
-          placeholder="Your Message"
           rows="5"
+          placeholder="Your Message"
         />
 
         <button type="submit">
@@ -30,9 +33,5 @@ function Contact() {
     </section>
   );
 }
-<section
-  id="contact"
-  className="contact-section"
-  style={{ border: "5px solid red" }}
->
+
 export default Contact;
