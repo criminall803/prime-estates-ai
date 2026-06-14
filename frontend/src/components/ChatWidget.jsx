@@ -69,7 +69,7 @@ function ChatWidget() {
         ...prev,
         {
           sender: "ai",
-          text: "Server connection failed."
+          text: " Welcome to Prime Estates! How can I assist you today? "
         }
       ]);
 
