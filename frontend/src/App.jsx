@@ -29,16 +29,7 @@ function App() {
         propertyPrompt={propertyPrompt}
       />
 
-      <div
-  style={{
-    height: "500px",
-    background: "red",
-    color: "white",
-    fontSize: "40px"
-  }}
->
-  CONTACT TEST
-</div>
+    < Contact />
     </>
   );
 }
