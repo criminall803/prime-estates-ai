@@ -705,3 +705,41 @@ body {
   cursor:pointer;
 
 }
+
+.contact-section{
+  padding:120px 20px;
+  text-align:center;
+}
+
+.contact-section h2{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.contact-form{
+  max-width:600px;
+  margin:40px auto;
+
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:16px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  font-size:16px;
+}
+
+.contact-form button{
+  padding:16px;
+  border:none;
+  border-radius:12px;
+
+  background:#2563eb;
+  color:white;
+
+  cursor:pointer;
+}
