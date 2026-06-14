@@ -2,9 +2,11 @@ import { useState, useRef, useEffect } from "react";
 import { BsStars } from "react-icons/bs";
 import { IoSend } from "react-icons/io5";
 
-
-function ChatWidget() {
-  const [open, setOpen] = useState(false);
+function ChatWidget({
+  openChat,
+  setOpenChat,
+  propertyPrompt
+}) {
   const [message, setMessage] = useState("");
 
   const [messages, setMessages] = useState([
@@ -22,11 +24,12 @@ function ChatWidget() {
     });
   }, [messages]);
 
-  const sendMessage = async () => {
+  const sendMessage = async (customMessage = null) => {
 
-    if (!message.trim()) return;
+    const currentMessage =
+      customMessage || message;
 
-    const currentMessage = message;
+    if (!currentMessage.trim()) return;
 
     setMessages(prev => [
       ...prev,
@@ -36,7 +39,9 @@ function ChatWidget() {
       }
     ]);
 
-    setMessage("");
+    if (!customMessage) {
+      setMessage("");
+    }
 
     try {
 
@@ -69,37 +74,47 @@ function ChatWidget() {
         ...prev,
         {
           sender: "ai",
-          text: " Welcome to Prime Estates! How can I assist you today? "
+          text: "Welcome to Prime Estates! How can I assist you today?"
         }
       ]);
 
     }
   };
 
+  useEffect(() => {
+
+    if (propertyPrompt) {
+
+      sendMessage(propertyPrompt);
+
+    }
+
+  }, [propertyPrompt]);
+
   return (
     <>
-  {!open && (
-  <button
-    className="chat-bubble"
-    onClick={() => setOpen(true)}
-  >
-    <BsStars size={30} />
-  </button>
-)}
+      {!openChat && (
+        <button
+          className="chat-bubble"
+          onClick={() => setOpenChat(true)}
+        >
+          <BsStars size={30} />
+        </button>
+      )}
 
-{open && (
-  <div className="chat-widget">
+      {openChat && (
+        <div className="chat-widget">
 
-    <div className="chat-header">
-      <span>Prime Estates AI Assistant</span>
+          <div className="chat-header">
+            <span>Prime Estates AI Assistant</span>
 
-  <button
-    className="close-btn"
-    onClick={() => setOpen(false)}
-  >
-    ✕
-  </button>
-</div>
+            <button
+              className="close-btn"
+              onClick={() => setOpenChat(false)}
+            >
+              ✕
+            </button>
+          </div>
 
           <div className="chat-messages">
 
@@ -135,9 +150,11 @@ function ChatWidget() {
               }}
             />
 
-            <button 
-              className="send-btn"onClick={sendMessage}>
-            <IoSend size={36} />
+            <button
+              className="send-btn"
+              onClick={() => sendMessage()}
+            >
+              <IoSend size={36} />
             </button>
 
           </div>
