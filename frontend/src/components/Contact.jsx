@@ -1,4 +1,5 @@
 function Contact() {
+    console.log("Rendering Contact component");
   return (
     <section
       id="contact"
