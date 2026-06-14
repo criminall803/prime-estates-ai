@@ -687,7 +687,5 @@ body {
 }
 
 .property-card{
-  opacity:0;
 
-  animation:slideUp .8s ease forwards;
 }
