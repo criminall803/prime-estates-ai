@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-function FeaturedProperties() {
+function FeaturedProperties({
+  setOpenChat,
+  setPropertyPrompt
+}) {
   const [selectedProperty, setSelectedProperty] = useState(null);
 
   const properties = [
@@ -100,9 +103,28 @@ function FeaturedProperties() {
                 {selectedProperty.description}
               </p>
 
-              <button className="primary-btn">
+              <button
+                className="primary-btn"
+                onClick={() => {
+                  setPropertyPrompt(`
+Tell me more about this property:
+
+Price: ${selectedProperty.price}
+Bedrooms: ${selectedProperty.beds}
+Bathrooms: ${selectedProperty.baths}
+Size: ${selectedProperty.sqft}
+Location: ${selectedProperty.city}
+
+What are the key highlights, advantages and ideal buyer profile?
+                  `);
+
+                  setSelectedProperty(null);
+                  setOpenChat(true);
+                }}
+              >
                 Ask AI About This Property
               </button>
+
             </div>
           </div>
         </div>
