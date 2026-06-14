@@ -1,23 +1,39 @@
+import { useState } from "react";
+
 function FeaturedProperties() {
+  const [selectedProperty, setSelectedProperty] = useState(null);
+
   const properties = [
     {
       price: "$425,000",
-      beds: "4 Bed • 3 Bath",
+      beds: "4 Bedrooms",
+      baths: "3 Bathrooms",
+      sqft: "2,150 sq ft",
       city: "Dallas, TX",
+      description:
+        "Modern family home featuring an open floor plan, updated kitchen, spacious backyard, and premium finishes throughout.",
       image:
         "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200",
     },
     {
       price: "$550,000",
-      beds: "5 Bed • 4 Bath",
+      beds: "5 Bedrooms",
+      baths: "4 Bathrooms",
+      sqft: "3,000 sq ft",
       city: "Dallas, TX",
+      description:
+        "Luxury property with generous living space, large bedrooms, elegant interiors, and a beautifully landscaped outdoor area.",
       image:
         "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200",
     },
     {
       price: "$350,000",
-      beds: "3 Bed • 2 Bath",
+      beds: "3 Bedrooms",
+      baths: "2 Bathrooms",
+      sqft: "1,850 sq ft",
       city: "Dallas, TX",
+      description:
+        "Beautiful starter home with modern finishes, bright living areas, and a comfortable layout perfect for families.",
       image:
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200",
     },
@@ -35,6 +51,7 @@ function FeaturedProperties() {
           <div
             className="property-card"
             key={index}
+            onClick={() => setSelectedProperty(property)}
           >
             <img
               src={property.image}
@@ -49,6 +66,47 @@ function FeaturedProperties() {
           </div>
         ))}
       </div>
+
+      {selectedProperty && (
+        <div
+          className="modal-overlay"
+          onClick={() => setSelectedProperty(null)}
+        >
+          <div
+            className="property-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="modal-close"
+              onClick={() => setSelectedProperty(null)}
+            >
+              ✕
+            </button>
+
+            <img
+              src={selectedProperty.image}
+              alt=""
+            />
+
+            <div className="property-modal-content">
+              <h2>{selectedProperty.price}</h2>
+
+              <p>🛏 {selectedProperty.beds}</p>
+              <p>🛁 {selectedProperty.baths}</p>
+              <p>📐 {selectedProperty.sqft}</p>
+              <p>📍 {selectedProperty.city}</p>
+
+              <p className="property-description">
+                {selectedProperty.description}
+              </p>
+
+              <button className="primary-btn">
+                Ask AI About This Property
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
