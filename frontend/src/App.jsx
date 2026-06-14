@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import FeaturedProperties from "./components/FeaturedProperties";
 import ChatWidget from "./components/ChatWidget";
+import Contact from "./components/Contact";
 
 import "./styles.css";
 
@@ -27,6 +28,17 @@ function App() {
         setOpenChat={setOpenChat}
         propertyPrompt={propertyPrompt}
       />
+
+      <div
+  style={{
+    height: "500px",
+    background: "red",
+    color: "white",
+    fontSize: "40px"
+  }}
+>
+  CONTACT TEST
+</div>
     </>
   );
 }

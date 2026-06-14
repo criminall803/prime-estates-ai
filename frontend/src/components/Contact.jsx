@@ -30,5 +30,9 @@ function Contact() {
     </section>
   );
 }
-
+<section
+  id="contact"
+  className="contact-section"
+  style={{ border: "5px solid red" }}
+>
 export default Contact;
